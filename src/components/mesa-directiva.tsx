@@ -51,7 +51,7 @@ export function MesaDirectiva() {
           </p>
         </div>
 
-        <div className="mx-auto mt-10 w-full max-w-[220px]">
+        <div className="mx-auto mt-10 w-full sm:max-w-[240px]">
           <Tarjeta m={presidente} />
         </div>
 
