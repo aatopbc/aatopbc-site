@@ -37,7 +37,7 @@ const textFont = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.aatopbc.com"),
+  metadataBase: new URL("https://aatopbc.com"),
   title: "AATOPBC — Experiencias en Baja California",
   description:
     "17 operadores locales, 4 ciudades, una red que conoce cada rincón de Baja California. Tours de vino, transporte ejecutivo, eventos MICE, bodas destino y más.",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: "AATOPBC — Tu entrada a Baja California",
     description:
       "Asociación de Anfitriones y Tour Operadores de Baja California. Explora experiencias de enoturismo, cultura, aventura y más.",
-    url: "https://www.aatopbc.com",
+    url: "https://aatopbc.com",
     siteName: "AATOPBC",
     locale: "es_MX",
     type: "website",

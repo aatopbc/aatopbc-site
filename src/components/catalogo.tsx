@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import { MapPin, Users, Clock, Tag, ArrowRight, ImageIcon } from "lucide-react";
 import { productos, categorias as cats } from "@/lib/data";
 import type { Categoria } from "@/lib/data";
+import { getSlugForSocio } from "@/lib/socios-data";
 import {
   Wine, Briefcase, Mic, Landmark, Gem, Plane, Heart,
   HeartHandshake, Mountain, Bus,
@@ -166,9 +168,18 @@ export function Catalogo() {
 
                     {/* Operator + CTA */}
                     <div className="mt-4 flex items-center justify-between border-t border-border pt-4">
-                      <span className="text-sm font-medium text-primary">
-                        {prod.empresa}
-                      </span>
+                      {getSlugForSocio(prod.empresa) ? (
+                        <Link
+                          href={`/socios/${getSlugForSocio(prod.empresa)}`}
+                          className="text-sm font-medium text-primary underline-offset-2 hover:underline"
+                        >
+                          {prod.empresa}
+                        </Link>
+                      ) : (
+                        <span className="text-sm font-medium text-primary">
+                          {prod.empresa}
+                        </span>
+                      )}
                       <a
                         href="#contacto"
                         className="inline-flex items-center gap-1 text-sm font-semibold text-accent transition-all duration-200 hover:gap-2"

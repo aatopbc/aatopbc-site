@@ -130,9 +130,18 @@ function ProductoCard({ producto }: { producto: Producto }) {
           </p>
         )}
         <div className="mt-4 flex items-center justify-between border-t border-border pt-4">
-          <span className="text-sm font-medium text-primary">
-            {producto.empresa}
-          </span>
+          {getSlugForSocio(producto.empresa) ? (
+            <Link
+              href={`/socios/${getSlugForSocio(producto.empresa)}`}
+              className="text-sm font-medium text-primary underline-offset-2 hover:underline"
+            >
+              {producto.empresa}
+            </Link>
+          ) : (
+            <span className="text-sm font-medium text-primary">
+              {producto.empresa}
+            </span>
+          )}
           <Link
             href="/#contacto"
             className="inline-flex items-center gap-1 text-sm font-semibold text-accent transition-all duration-200 hover:gap-2"

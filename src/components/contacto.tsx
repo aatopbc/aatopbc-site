@@ -1,4 +1,4 @@
-import { Send, Mail, Phone } from "lucide-react";
+import { Send, Mail } from "lucide-react";
 
 export function Contacto() {
   return (
@@ -30,14 +30,6 @@ export function Contacto() {
               className="inline-flex items-center gap-2 hover:text-white transition-colors"
             >
               <Mail size={16} /> aatopbc@gmail.com
-            </a>
-            <a
-              href="https://wa.me/5216641516622"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 hover:text-white transition-colors"
-            >
-              <Phone size={16} /> Asesor AATOPBC — Juan Tintos
             </a>
           </div>
         </div>

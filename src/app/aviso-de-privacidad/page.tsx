@@ -176,7 +176,7 @@ export default function AvisoDePrivacidadPage() {
             <p>
               AATOPBC se reserva el derecho de modificar este aviso en
               cualquier momento. Los cambios se publicarán en
-              www.aatopbc.com.
+              aatopbc.com.
             </p>
           </Seccion>
 

@@ -84,7 +84,7 @@ export function Footer() {
             <div className="mt-3 space-y-2 text-sm text-muted-foreground">
               <p>aatopbc@gmail.com</p>
               <p>Baja California, México</p>
-              <p>www.aatopbc.com</p>
+              <p>aatopbc.com</p>
             </div>
           </div>
         </div>
@@ -98,17 +98,6 @@ export function Footer() {
             >
               Aviso de Privacidad
             </Link>
-          </p>
-          <p>
-            Built with{" "}
-            <a
-              href="https://tododeia.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:text-primary"
-            >
-              Claude Web Builder by Tododeia
-            </a>
           </p>
         </div>
       </div>
