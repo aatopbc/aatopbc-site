@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  --background:         #FAFAF8;
+  --foreground:         #1A1A1A;
+  --primary:            #1B3A5C;
+  --primary-foreground: #FAFAF8;
+  --accent:             #722F37;
+  --accent-foreground:  #FAFAF8;
+  --muted:              #E8E4DF;
+  --muted-foreground:   #6B6560;
+  --border:             #D4CFC8;
+  --ring:               #1B3A5C;
+  --olive:              #5C6B3C;
+  --sand:               #C4B8A8;
+}
+
+@theme inline {
+  --color-background:         var(--background);
+  --color-foreground:         var(--foreground);
+  --color-primary:            var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent:             var(--accent);
+  --color-accent-foreground:  var(--accent-foreground);
+  --color-muted:              var(--muted);
+  --color-muted-foreground:   var(--muted-foreground);
+  --color-border:             var(--border);
+  --color-ring:               var(--ring);
+  --color-olive:              var(--olive);
+  --color-sand:               var(--sand);
+
+  --font-heading: var(--font-display);
+  --font-body:    var(--font-text);
+  --font-sans:    var(--font-text);
+}
+
+@theme {
+  --text-fluid-sm:  clamp(0.875rem, 0.8rem + 0.25vw, 1rem);
+  --text-fluid-base: clamp(1rem, 0.9rem + 0.35vw, 1.125rem);
+  --text-fluid-lg:  clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+  --text-fluid-xl:  clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  --text-fluid-2xl: clamp(2rem, 1.5rem + 1.5vw, 3rem);
+  --text-fluid-3xl: clamp(2.5rem, 1.8rem + 2.5vw, 4rem);
+
+  --spacing-section: clamp(4rem, 3rem + 4vw, 8rem);
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
