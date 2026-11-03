@@ -59,7 +59,7 @@ export function Directorio() {
                   <img
                     src={socio.logo}
                     alt={`Logo ${socio.nombre}`}
-                    className="h-14 w-auto object-contain px-4"
+                    className="h-20 w-52 object-contain"
                   />
                 ) : (
                   <div className="flex flex-col items-center gap-1 text-muted-foreground/30">

@@ -20,11 +20,24 @@ function getCatMeta(id: Categoria) {
   return cats.find((c) => c.id === id);
 }
 
+const PAGE_SIZE = 9;
+
+const productosOrdenados = [...productos].sort((a, b) =>
+  a.nombre.localeCompare(b.nombre, "es", { sensitivity: "base" })
+);
+
 export function Catalogo() {
   const [active, setActive] = useState<Categoria | null>(null);
+  const [visible, setVisible] = useState(PAGE_SIZE);
   const filtered = active
-    ? productos.filter((p) => p.categorias.includes(active))
-    : productos;
+    ? productosOrdenados.filter((p) => p.categorias.includes(active))
+    : productosOrdenados;
+  const shown = filtered.slice(0, visible);
+
+  function selectCategoria(cat: Categoria | null) {
+    setActive(cat);
+    setVisible(PAGE_SIZE);
+  }
 
   return (
     <section className="bg-muted/30 py-section">
@@ -32,7 +45,7 @@ export function Catalogo() {
         {/* Filter pills */}
         <div className="flex flex-wrap gap-2 mb-10">
           <button
-            onClick={() => setActive(null)}
+            onClick={() => selectCategoria(null)}
             className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 active:scale-[0.97] cursor-pointer ${
               active === null
                 ? "bg-primary text-primary-foreground"
@@ -44,7 +57,7 @@ export function Catalogo() {
           {cats.map((cat) => (
             <button
               key={cat.id}
-              onClick={() => setActive(active === cat.id ? null : cat.id)}
+              onClick={() => selectCategoria(active === cat.id ? null : cat.id)}
               className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 active:scale-[0.97] cursor-pointer ${
                 active === cat.id
                   ? "bg-primary text-primary-foreground"
@@ -66,7 +79,7 @@ export function Catalogo() {
             transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
             className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
           >
-            {filtered.map((prod) => {
+            {shown.map((prod) => {
               const mainCat = getCatMeta(prod.categorias[0]);
               return (
                 <article
@@ -169,6 +182,20 @@ export function Catalogo() {
             })}
           </motion.div>
         </AnimatePresence>
+
+        {filtered.length > visible && (
+          <div className="mt-10 flex flex-col items-center gap-2">
+            <p className="text-sm text-muted-foreground">
+              Mostrando {shown.length} de {filtered.length} experiencias
+            </p>
+            <button
+              onClick={() => setVisible((v) => v + PAGE_SIZE)}
+              className="inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground transition-transform duration-150 hover:brightness-110 active:scale-[0.97] cursor-pointer"
+            >
+              Ver más
+            </button>
+          </div>
+        )}
 
         {filtered.length === 0 && (
           <p className="text-center text-muted-foreground py-12">
