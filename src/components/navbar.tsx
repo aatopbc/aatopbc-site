@@ -5,10 +5,10 @@ import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { href: "#experiencias", label: "Experiencias" },
-  { href: "#socios", label: "Socios" },
-  { href: "#nosotros", label: "Nosotros" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "/#experiencias", label: "Experiencias" },
+  { href: "/#socios", label: "Socios" },
+  { href: "/#nosotros", label: "Nosotros" },
+  { href: "/#contacto", label: "Contacto" },
 ];
 
 export function Navbar() {
@@ -17,7 +17,7 @@ export function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
-        <a href="#" className="flex items-center gap-3">
+        <a href="/" className="flex items-center gap-3">
           <Image
             src="/images/logo-aatopbc.png"
             alt="AATOPBC — Asociación de Anfitriones y Tour Operadores de Baja California"
@@ -41,7 +41,7 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="#contacto"
+            href="/#contacto"
             className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform duration-150 active:scale-[0.97]"
           >
             Solicitar Cotización
@@ -72,7 +72,7 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="#contacto"
+            href="/#contacto"
             onClick={() => setOpen(false)}
             className="mt-3 block rounded-lg bg-primary px-5 py-3 text-center text-sm font-semibold text-primary-foreground"
           >

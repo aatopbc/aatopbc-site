@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export function Footer() {
   return (
@@ -28,22 +29,22 @@ export function Footer() {
               <h4 className="text-sm font-semibold text-foreground">Navegar</h4>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li>
-                  <a href="#experiencias" className="hover:text-primary transition-colors">
+                  <a href="/#experiencias" className="hover:text-primary transition-colors">
                     Experiencias
                   </a>
                 </li>
                 <li>
-                  <a href="#socios" className="hover:text-primary transition-colors">
+                  <a href="/#socios" className="hover:text-primary transition-colors">
                     Socios
                   </a>
                 </li>
                 <li>
-                  <a href="#nosotros" className="hover:text-primary transition-colors">
+                  <a href="/#nosotros" className="hover:text-primary transition-colors">
                     Nosotros
                   </a>
                 </li>
                 <li>
-                  <a href="#contacto" className="hover:text-primary transition-colors">
+                  <a href="/#contacto" className="hover:text-primary transition-colors">
                     Contacto
                   </a>
                 </li>
@@ -90,6 +91,14 @@ export function Footer() {
 
         <div className="mt-10 border-t border-border pt-6 flex flex-col items-center gap-2 text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} AATOPBC. Todos los derechos reservados.</p>
+          <p>
+            <Link
+              href="/aviso-de-privacidad"
+              className="underline hover:text-primary"
+            >
+              Aviso de Privacidad
+            </Link>
+          </p>
           <p>
             Built with{" "}
             <a
