@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 const links = [
@@ -17,7 +18,7 @@ export function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
-        <a href="/" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3">
           <Image
             src="/images/logo-aatopbc.png"
             alt="AATOPBC — Asociación de Anfitriones y Tour Operadores de Baja California"
@@ -27,25 +28,25 @@ export function Navbar() {
             priority
             unoptimized
           />
-        </a>
+        </Link>
 
         {/* Desktop */}
         <div className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
-            <a
+            <Link
               key={l.href}
               href={l.href}
               className="text-fluid-sm font-medium text-foreground/70 transition-colors duration-200 hover:text-primary"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
-          <a
+          <Link
             href="/#contacto"
             className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform duration-150 active:scale-[0.97]"
           >
             Solicitar Cotización
-          </a>
+          </Link>
         </div>
 
         {/* Mobile toggle */}
@@ -62,22 +63,22 @@ export function Navbar() {
       {open && (
         <div className="border-t border-border bg-background px-6 pb-6 pt-4 md:hidden">
           {links.map((l) => (
-            <a
+            <Link
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
               className="block py-3 text-base font-medium text-foreground/80"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
-          <a
+          <Link
             href="/#contacto"
             onClick={() => setOpen(false)}
             className="mt-3 block rounded-lg bg-primary px-5 py-3 text-center text-sm font-semibold text-primary-foreground"
           >
             Solicitar Cotización
-          </a>
+          </Link>
         </div>
       )}
     </header>
