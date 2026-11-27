@@ -29,24 +29,24 @@ export function Footer() {
               <h4 className="text-sm font-semibold text-foreground">Navegar</h4>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li>
-                  <a href="/#experiencias" className="hover:text-primary transition-colors">
+                  <Link href="/#experiencias" className="hover:text-primary transition-colors">
                     Experiencias
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/#socios" className="hover:text-primary transition-colors">
+                  <Link href="/#socios" className="hover:text-primary transition-colors">
                     Socios
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/#nosotros" className="hover:text-primary transition-colors">
+                  <Link href="/#nosotros" className="hover:text-primary transition-colors">
                     Nosotros
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/#contacto" className="hover:text-primary transition-colors">
+                  <Link href="/#contacto" className="hover:text-primary transition-colors">
                     Contacto
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
