@@ -1,4 +1,4 @@
-import { Send, Mail } from "lucide-react";
+import { Send, Mail, Phone } from "lucide-react";
 
 export function Contacto() {
   return (
@@ -26,10 +26,16 @@ export function Contacto() {
 
           <div className="mt-10 flex flex-col items-center gap-4 text-sm text-white/70 sm:flex-row sm:justify-center sm:gap-8">
             <a
-              href="mailto:aatopbc@gmail.com"
+              href="mailto:info@aatopbc.com"
               className="inline-flex items-center gap-2 hover:text-white transition-colors"
             >
-              <Mail size={16} /> aatopbc@gmail.com
+              <Mail size={16} /> info@aatopbc.com
+            </a>
+            <a
+              href="tel:+526862319623"
+              className="inline-flex items-center gap-2 hover:text-white transition-colors"
+            >
+              <Phone size={16} /> +52 686 231 9623
             </a>
           </div>
         </div>

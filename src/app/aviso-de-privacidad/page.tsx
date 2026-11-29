@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     "Aviso de privacidad de la Asociación de Anfitriones y Tour Operadores de Baja California, A.C.",
 };
 
-const CORREO = "aatopbc@gmail.com";
+const CORREO = "info@aatopbc.com";
 
 function Seccion({
   titulo,

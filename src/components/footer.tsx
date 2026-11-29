@@ -82,7 +82,16 @@ export function Footer() {
           <div>
             <h4 className="text-sm font-semibold text-foreground">Contacto</h4>
             <div className="mt-3 space-y-2 text-sm text-muted-foreground">
-              <p>aatopbc@gmail.com</p>
+              <p>
+                <a href="mailto:info@aatopbc.com" className="hover:text-primary transition-colors">
+                  info@aatopbc.com
+                </a>
+              </p>
+              <p>
+                <a href="tel:+526862319623" className="hover:text-primary transition-colors">
+                  +52 686 231 9623
+                </a>
+              </p>
               <p>Baja California, México</p>
               <p>aatopbc.com</p>
             </div>
